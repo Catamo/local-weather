@@ -3,6 +3,7 @@ $(function() {
   const $spanDegrees = $("#spanDegrees");
   const $btnChange = $("#btnChange");
   const $footer = $("footer");
+  const $weatherDesc = $("#weatherDesc");
   const $body = $("body");
 
   var dsKey = "4fb8edf36f2f51939eb20027e369df9f",
@@ -43,6 +44,7 @@ $(function() {
       success: function(data) {
         $spanTimeZone.text(data.timezone.replace("_", " "));
         $spanDegrees.text(data.currently.temperature.toFixed(2) + (isCelsius ? " ºC" : " ºF"));
+        $weatherDesc.text(data.currently.summary);
         $footer.removeClass('hidden');
         currentValue = data.currently.temperature;
 

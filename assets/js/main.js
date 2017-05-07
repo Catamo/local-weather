@@ -24,7 +24,7 @@ $(function() {
   };
 
   function loadWeather(){
-    $.getJSON('http://ipinfo.io', function(data){
+    $.getJSON('https://ipinfo.io', function(data){
         var loc = data.loc.split(",");
 
         call(loc[0], loc[1]);
